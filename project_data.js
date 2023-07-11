@@ -1,3 +1,40 @@
+// Email Validation
+const emailInput = document.getElementById('email');
+emailInput.addEventListener('input', validateEmail);
+
+function validateEmail(event) {
+  const text = event.target.value;
+  const lowercaseText = text.toLowerCase();
+  const isLowerCase = text === lowercaseText;
+  emailInput.setCustomValidity(isLowerCase ? '' : 'Please write email in lowercase');
+}
+
+// Local Storage
+const form = document.getElementById('form');
+const dataKey = 'formData';
+
+form.addEventListener('submit', saveFormData);
+
+function saveFormData(event) {
+  event.preventDefault();
+  const formData = new FormData(event.target);
+  const dataObject = Object.fromEntries(formData);
+  const jsonData = JSON.stringify(dataObject);
+  localStorage.setItem(dataKey, jsonData);
+}
+
+window.addEventListener('DOMContentLoaded', populateFormData);
+
+function populateFormData() {
+  const storedData = localStorage.getItem(dataKey);
+  if (storedData) {
+    const parsedData = JSON.parse(storedData);
+    emailInput.value = parsedData.email || '';
+    document.getElementById('name').value = parsedData.text || '';
+    document.getElementById('message').value = parsedData.message || '';
+  }
+}
+
 //ProjectData
 const projects = [
   {
