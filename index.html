@@ -16,7 +16,7 @@
         <div class="logo">
             <a href="#"><h2>Bilal</h2></a>
         </div>
-        <nav class="Menuicon">
+        <nav class="hamBurger">
             <span id="navicon" class="material-symbols-outlined">
                 menu
                 </span>
@@ -25,13 +25,12 @@
             <a href="#" id="cross" class="Menuiconcross">
                 <span
                     id="crossIcon"
-                    style="color: white"
-                    class="material-symbols-outlined">
+                    class="material-symbols-outlined color_white">
                         close
 				</span></a>
-            <li id="work_m" class="lil"><a class="menu_item" href="#works">portfolio</a></li>
-            <li id="about_m" class="lil"><a class="menu_item" href="#aboutme">About</a></li>
-            <li id="contact_m" class="lil"><a class="menu_item" href="#contact">Contact</a></li>
+            <li id="work_m" class="li_item"><a class="menu_item" href="#works">Portfolio</a></li>
+            <li id="about_m" class="li_item"><a class="menu_item" href="#aboutme">About</a></li>
+            <li id="contact_m" class="li_item"><a class="menu_item" href="#contact">Contact</a></li>
         </ul>
     </header>
     <section id="headline">
@@ -51,127 +50,8 @@
         </div>
     </section>
 
-    <section id="works">
-        <div class="project project1">
-            <div>
-                <img class="image" src="./assets/SnapshootPortfolio.svg" alt="">
-            </div>
-
-            <div class="projectDescription">
-                <div class="projectTitle">
-                    <span class="heading">Tonic</span>
-                </div>
-                <ul class="projectTools">
-                    <li class="canopy">CANOPY</li>
-                    <li><img src="./assets/Counter.svg" alt=""></li>
-                    <li>Back End Dev</li>
-                    <li><img src="./assets/Counter.svg" alt=""></li>
-                    <li>2015</li>
-                </ul>
-                <div class="projectSummary">
-                    <p>A daily selection of privately personalized reads; no accounts or sign-ups required.</p>
-                </div>
-                <ul class="projectTechnology">
-                    <li class="tag">HTML</li>
-                    <li class="tag">CSS</li>
-                    <li class="tag">JavaScript</li>
-                </ul>
-                <div class="projectDemo">
-                    <button class="button button1">See project</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="project project2">
-            <div>
-                <img class="image" src="./assets/SnapshootPortfolio1.svg" alt="">
-            </div>
-
-            <div class="projectDescription">
-                <div class="projectTitle">
-                    <span class="heading">Multi</span>
-                </div>
-                <ul class="projectTools">
-                    <li class="canopy">CANOPY</li>
-                    <li><img src="./assets/Counter.svg" alt=""></li>
-                    <li>Back End Dev</li>
-                    <li><img src="./assets/Counter.svg" alt=""></li>
-                    <li>2015</li>
-                </ul>
-                <div class="projectSummary">
-                    <p>A daily selection of privately personalized reads; no accounts or sign-ups required.</p>
-                </div>
-                <ul class="projectTechnology">
-                    <li class="tag">HTML</li>
-                    <li class="tag">CSS</li>
-                    <li class="tag">JavaScript</li>
-                </ul>
-                <div class="projectDemo">
-                    <button class="button button1">See project</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="project project3">
-            <div>
-                <img class="image" src="./assets/SnapshootPortfolio2.svg" alt="">
-            </div>
-
-            <div class="projectDescription">
-                <div class="projectTitle">
-                    <span class="heading">Tonic</span>
-                </div>
-                <ul class="projectTools">
-                    <li class="canopy">CANOPY</li>
-                    <li><img src="./assets/Counter.svg" alt=""></li>
-                    <li>Back End Dev</li>
-                    <li><img src="./assets/Counter.svg" alt=""></li>
-                    <li>2015</li>
-                </ul>
-                <div class="projectSummary">
-                    <p>A daily selection of privately personalized reads; no accounts or sign-ups required.</p>
-                </div>
-                <ul class="projectTechnology">
-                    <li class="tag">HTML</li>
-                    <li class="tag">CSS</li>
-                    <li class="tag">JavaScript</li>
-                </ul>
-                <div class="projectDemo">
-                    <button class="button button1">See project</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="project project4">
-            <div>
-                <img class="image" src="./assets/SnapshootPortfolio3.svg" alt="">
-            </div>
-
-            <div class="projectDescription">
-                <div class="projectTitle">
-                    <span class="heading">Multi</span>
-                </div>
-                <ul class="projectTools">
-                    <li class="canopy">CANOPY</li>
-                    <li><img src="./assets/Counter.svg" alt=""></li>
-                    <li>Back End Dev</li>
-                    <li><img src="./assets/Counter.svg" alt=""></li>
-                    <li>2015</li>
-                </ul>
-                <div class="projectSummary">
-                    <p>A daily selection of privately personalized reads; no accounts or sign-ups required.</p>
-                </div>
-                <ul class="projectTechnology">
-                    <li class="tag">HTML</li>
-                    <li class="tag">CSS</li>
-                    <li class="tag">JavaScript</li>
-                </ul>
-                <div class="projectDemo">
-                    <button class="button button1">See project</button>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section id="works"></section>
+    <section id="model"></section>
     
     <section id="aboutme">
         <div class="top">
@@ -249,13 +129,14 @@
                 I’d love to help with it.
             </p>
         </div>
-        <form class="form" action="https://formspree.io/f/mayzgvgj" method="POST">
-            <input class="input" type="text" maxlength="30" name="text" required placeholder="Enter your name">
-            <input class="input" type="email" name="email" required placeholder="Enter your email">
-            <textarea class="input" maxlength="500" name="message" placeholder="Write your message here.." rows="7" required></textarea>
+        <form id="form" class="form" action="https://formspree.io/f/mayzgvgj" method="POST">
+            <input id="name" class="input" type="text" maxlength="30" name="text" required placeholder="Enter your name">
+            <input id="email" class="input" type="email" name="email" required placeholder="Enter your email">
+            <textarea id="message" class="input" maxlength="500" name="message" placeholder="Write your message here.." rows="7" required></textarea>
             <button type="submit" class="submitt" >Get in touch</button>
         </form>
     </section>
     <script src="menu.js"></script>
+    <script src="project_data.js"></script>
 </body>
 </html>

@@ -1,26 +1,14 @@
-const hamburgerBtn = document.getElementById('navicon');
 const menuIcon = document.getElementById('menu');
-const btnCross = document.getElementById('cross');
-const work = document.getElementById('work_m');
-const about = document.getElementById('about_m');
-const contact = document.getElementById('contact_m');
+const toggleMenu = () => {
+  if (menuIcon.style.display === 'flex') {
+    menuIcon.style.display = 'none';
+  } else {
+    menuIcon.style.display = 'flex';
+  }
+};
 
-hamburgerBtn.addEventListener('click', () => {
-  menuIcon.style.display = menuIcon.style.display === 'flex' ? 'none' : 'flex';
-});
-
-btnCross.addEventListener('click', () => {
-  menuIcon.style.display = menuIcon.style.display === 'flex' ? 'none' : 'flex';
-});
-
-work.addEventListener('click', () => {
-  menuIcon.style.display = menuIcon.style.display === 'flex' ? 'none' : 'flex';
-});
-
-about.addEventListener('click', () => {
-  menuIcon.style.display = menuIcon.style.display === 'flex' ? 'none' : 'flex';
-});
-
-contact.addEventListener('click', () => {
-  menuIcon.style.display = menuIcon.style.display === 'flex' ? 'none' : 'flex';
-});
+document.getElementById('navicon').addEventListener('click', toggleMenu);
+document.getElementById('cross').addEventListener('click', toggleMenu);
+document.getElementById('work_m').addEventListener('click', toggleMenu);
+document.getElementById('about_m').addEventListener('click', toggleMenu);
+document.getElementById('contact_m').addEventListener('click', toggleMenu);
