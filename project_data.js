@@ -223,7 +223,7 @@ function createProjectCard(card) {
 
   return project;
 }
-
+// eslint-disable-next-line no-unused-vars
 function button(id) {
   const card = projects.find((card) => card.id === id);
   if (card) {
