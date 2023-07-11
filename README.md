@@ -80,7 +80,7 @@ In order to run this project you need:
 Clone this repository to your desired folder or download the Zip folder:
 
 ```
-git clone https://github.com/BilalLiaquat7/Portfolio
+git clone https://github.com/BilalLiaquat7/NewPortfolio
 ```
 
 - Navigate to the location of the folder in your machine:
@@ -130,17 +130,11 @@ npx stylelint "**/*.{css,scss}"
 
 - GitHub: [@githubhandle](https://github.com/BilalLiaquat7)
 
-👤 **Victor Correia**
-
-- GitHub: [@githubhandle](https://github.com/dvcorreia1984)
-- Twitter: [@twitterhandle](https://twitter.com/dvcorreia1984)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/dvcorreia)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 📺 Live Demo <a name="live-demo"></a>
 
-- Live Demo: [@livedemo](https://bilalliaquat7.github.io/Portfolio/)
+- Live Demo: [@livedemo](https://bilalliaquat7.github.io/NewPortfolio/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
