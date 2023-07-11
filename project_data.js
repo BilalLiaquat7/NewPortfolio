@@ -1,21 +1,19 @@
 // Email Validation
-const emailInput = document.getElementById("email");
-emailInput.addEventListener("input", validateEmail);
+const emailInput = document.getElementById('email');
 
 function validateEmail(event) {
   const text = event.target.value;
   const lowercaseText = text.toLowerCase();
   const isLowerCase = text === lowercaseText;
   emailInput.setCustomValidity(
-    isLowerCase ? "" : "Please write email in lowercase"
+    isLowerCase ? '' : 'Please write email in lowercase',
   );
 }
+emailInput.addEventListener('input', validateEmail);
 
 // Local Storage
-const form = document.getElementById("form");
-const dataKey = "formData";
-
-form.addEventListener("submit", saveFormData);
+const form = document.getElementById('form');
+const dataKey = 'formData';
 
 function saveFormData(event) {
   event.preventDefault();
@@ -24,91 +22,91 @@ function saveFormData(event) {
   const jsonData = JSON.stringify(dataObject);
   localStorage.setItem(dataKey, jsonData);
 }
-
-window.addEventListener("DOMContentLoaded", populateFormData);
+form.addEventListener('submit', saveFormData);
 
 function populateFormData() {
   const storedData = localStorage.getItem(dataKey);
   if (storedData) {
     const parsedData = JSON.parse(storedData);
-    emailInput.value = parsedData.email || "";
-    document.getElementById("name").value = parsedData.text || "";
-    document.getElementById("message").value = parsedData.message || "";
+    emailInput.value = parsedData.email || '';
+    document.getElementById('name').value = parsedData.text || '';
+    document.getElementById('message').value = parsedData.message || '';
   }
 }
+window.addEventListener('DOMContentLoaded', populateFormData);
 
-//ProjectData
+// ProjectData
 const projects = [
   {
     id: 1,
-    image: "./assets/SnapshootPortfolio.svg",
-    Projectname: "Tonic",
+    image: './assets/SnapshootPortfolio.svg',
+    Projectname: 'Tonic',
     history: {
-      proName: "CANOPY",
-      tech: "Backend Dev",
+      proName: 'CANOPY',
+      tech: 'Backend Dev',
       year: 2015,
     },
-    disc: "A daily selection of privately personalized reads;no accounts or sign-ups required.",
+    disc: 'A daily selection of privately personalized reads;no accounts or sign-ups required.',
     languages: {
-      html: "HTML",
-      css: "CSS",
-      javascript: "JavaScript",
+      html: 'HTML',
+      css: 'CSS',
+      javascript: 'JavaScript',
     },
-    button: "myBtn",
+    button: 'myBtn',
   },
   {
     id: 2,
-    image: "./assets/SnapshootPortfolio1.svg",
-    Projectname: "Multi-Post",
+    image: './assets/SnapshootPortfolio1.svg',
+    Projectname: 'Multi-Post',
     history: {
-      proName: "CANOPY",
-      tech: "Backend Dev",
+      proName: 'CANOPY',
+      tech: 'Backend Dev',
       year: 2015,
     },
-    disc: "A daily selection of privately personalized reads;no accounts or sign-ups required.",
+    disc: 'A daily selection of privately personalized reads;no accounts or sign-ups required.',
     languages: {
-      html: "HTML",
-      css: "CSS",
-      javascript: "JavaScript",
+      html: 'HTML',
+      css: 'CSS',
+      javascript: 'JavaScript',
     },
-    button: "myBtn",
+    button: 'myBtn',
   },
   {
     id: 3,
-    image: "./assets/SnapshootPortfolio2.svg",
-    Projectname: "Tonic",
+    image: './assets/SnapshootPortfolio2.svg',
+    Projectname: 'Tonic',
     history: {
-      proName: "CANOPY",
-      tech: "Backend Dev",
+      proName: 'CANOPY',
+      tech: 'Backend Dev',
       year: 2015,
     },
-    disc: "A daily selection of privately personalized reads;no accounts or sign-ups required.",
+    disc: 'A daily selection of privately personalized reads;no accounts or sign-ups required.',
     languages: {
-      html: "HTML",
-      css: "CSS",
-      javascript: "JavaScript",
+      html: 'HTML',
+      css: 'CSS',
+      javascript: 'JavaScript',
     },
-    button: "myBtn",
+    button: 'myBtn',
   },
   {
     id: 4,
-    image: "./assets/SnapshootPortfolio3.svg",
-    Projectname: "MultiPost",
+    image: './assets/SnapshootPortfolio3.svg',
+    Projectname: 'MultiPost',
     history: {
-      proName: "CANOPY",
-      tech: "Backend Dev",
+      proName: 'CANOPY',
+      tech: 'Backend Dev',
       year: 2015,
     },
-    disc: "A daily selection of privately personalized reads;no accounts or sign-ups required.",
+    disc: 'A daily selection of privately personalized reads;no accounts or sign-ups required.',
     languages: {
-      html: "HTML",
-      css: "CSS",
-      javascript: "JavaScript",
+      html: 'HTML',
+      css: 'CSS',
+      javascript: 'JavaScript',
     },
-    button: "myBtn",
+    button: 'myBtn',
   },
 ];
-const section = document.getElementById("works");
+const section = document.getElementById('works');
 const projectMethod = () => {
   const projectsHTML = projects
     .map(
@@ -141,20 +139,25 @@ const projectMethod = () => {
           </div>
         </div>
       </div>
-    `
+    `,
     )
-    .join("");
+    .join('');
 
   section.innerHTML = projectsHTML;
 };
 
 projectMethod();
 
-const modal = document.getElementById("model");
+const modal = document.getElementById('model');
+
+function closeModal() {
+  modal.style.display = 'none';
+  modal.innerHTML = '';
+}
 
 function createProjectCard(card) {
-  const project = document.createElement("div");
-  project.classList.add("modelsection");
+  const project = document.createElement('div');
+  project.classList.add('modelsection');
   project.classList.add(card.button);
   project.innerHTML = `
     <div class="header">
@@ -215,8 +218,8 @@ function createProjectCard(card) {
       </div>
     </div>`;
 
-  const closeIcon = project.querySelector("#modelcrossIcon");
-  closeIcon.addEventListener("click", closeModal);
+  const closeIcon = project.querySelector('#modelcrossIcon');
+  closeIcon.addEventListener('click', closeModal);
 
   return project;
 }
@@ -224,13 +227,8 @@ function createProjectCard(card) {
 function button(id) {
   const card = projects.find((card) => card.id === id);
   if (card) {
-    modal.innerHTML = ``;
+    modal.innerHTML = '';
     modal.appendChild(createProjectCard(card));
-    modal.style.display = "flex";
+    modal.style.display = 'flex';
   }
-}
-
-function closeModal() {
-  modal.style.display = "none";
-  modal.innerHTML = "";
 }
