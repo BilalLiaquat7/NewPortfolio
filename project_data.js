@@ -1,19 +1,21 @@
 // Email Validation
-const emailInput = document.getElementById('email');
-emailInput.addEventListener('input', validateEmail);
+const emailInput = document.getElementById("email");
+emailInput.addEventListener("input", validateEmail);
 
 function validateEmail(event) {
   const text = event.target.value;
   const lowercaseText = text.toLowerCase();
   const isLowerCase = text === lowercaseText;
-  emailInput.setCustomValidity(isLowerCase ? '' : 'Please write email in lowercase');
+  emailInput.setCustomValidity(
+    isLowerCase ? "" : "Please write email in lowercase"
+  );
 }
 
 // Local Storage
-const form = document.getElementById('form');
-const dataKey = 'formData';
+const form = document.getElementById("form");
+const dataKey = "formData";
 
-form.addEventListener('submit', saveFormData);
+form.addEventListener("submit", saveFormData);
 
 function saveFormData(event) {
   event.preventDefault();
@@ -23,15 +25,15 @@ function saveFormData(event) {
   localStorage.setItem(dataKey, jsonData);
 }
 
-window.addEventListener('DOMContentLoaded', populateFormData);
+window.addEventListener("DOMContentLoaded", populateFormData);
 
 function populateFormData() {
   const storedData = localStorage.getItem(dataKey);
   if (storedData) {
     const parsedData = JSON.parse(storedData);
-    emailInput.value = parsedData.email || '';
-    document.getElementById('name').value = parsedData.text || '';
-    document.getElementById('message').value = parsedData.message || '';
+    emailInput.value = parsedData.email || "";
+    document.getElementById("name").value = parsedData.text || "";
+    document.getElementById("message").value = parsedData.message || "";
   }
 }
 
@@ -148,3 +150,87 @@ const projectMethod = () => {
 
 projectMethod();
 
+const modal = document.getElementById("model");
+
+function createProjectCard(card) {
+  const project = document.createElement("div");
+  project.classList.add("modelsection");
+  project.classList.add(card.button);
+  project.innerHTML = `
+    <div class="header">
+      <div>
+        <h2>${card.Projectname}</h2>
+        <div class="card_historyy">
+          <div class="card_history_detaill">
+            <p>${card.history.proName}</p>
+          </div>
+          <div>
+            <img src="./assets/Counter.svg" alt="dot" />
+          </div>
+          <div class="card_history_detail">
+            <p>${card.history.tech}</p>
+          </div>
+          <div>
+            <img src="./assets/Counter.svg" alt="dot" />
+          </div>
+          <div class="card_history_detail">
+            <p>${card.history.year}</p>
+          </div>
+        </div>
+      </div>
+      <a href="#" id="modelcross" class="Menuicon">
+        <span id="modelcrossIcon" style="color: black" class="material-symbols-outlined">
+          close
+        </span>
+      </a>
+    </div>
+    <div class="modelimage">
+      <img class="card_imagee" src="${card.image}" alt="Tonic Project" />
+    </div>
+    <div class="modeldisc">
+      <div class="card_discription">
+        <p>${card.disc}</p>
+      </div>
+      <div class="card_tags">
+        <div class="modeltags">
+          <div class="tag">
+            <span class="small">${card.languages.html}</span>
+          </div>
+          <div class="tag">
+            <span class="small">${card.languages.css}</span>
+          </div>
+          <div class="tag">
+            <span class="small">${card.languages.javascript}</span>
+          </div>
+        </div>
+        <hr class="hr">
+        <div class="card_action">
+          <button class="modelbtn button button1" type="button">
+            See live <img style="height: 24px; width: 24px; margin-left: 6px;" src="./assets/see_live.svg" alt="">
+          </button>
+          <button class="modelbtn button button1" type="button">
+            See source <img style="height: 24px; width: 24px; margin-left: 6px;" src="./assets/see_source.svg" alt="">
+          </button>
+        </div>
+      </div>
+    </div>`;
+
+  const closeIcon = project.querySelector("#modelcrossIcon");
+  closeIcon.addEventListener("click", closeModal);
+
+  return project;
+}
+
+function button(id) {
+  const card = projects.find((card) => card.id === id);
+  if (card) {
+    modal.innerHTML = ``;
+    modal.appendChild(createProjectCard(card));
+    modal.style.display = "flex";
+  }
+}
+
+function closeModal() {
+  modal.style.display = "none";
+  modal.innerHTML = "";
+}
